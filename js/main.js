@@ -16,7 +16,6 @@ var flipCard = function(cardId) {
     if (cardsInPlay.length === 2){
       checkForMatch();
     };
-    
   };
 
 flipCard(0);
