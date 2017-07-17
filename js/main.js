@@ -57,5 +57,13 @@ var createBoard = function(){
 
 
 
+document.getElementById("reset").onclick = function () {
+  if (gameStarted === true) {
+    window.location.reload();
+  } else {
+    alert("Keep playing");
+  };
+};
+
 createBoard();
 
