@@ -69,12 +69,21 @@ a{
 img{
   margin: 40px 8px 0 8px;
 }
-
+#yourScore{
+  font-family: "Droid Serif", serif;
+  line-height: 26px;
+  font-size: 18px; 
+}
 #reset{
-  width: 80px;
-  height: 40px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  width: 150px;
+  height: 60px;
   border-radius: 10px;
   background-color: #f15b31;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: white;
 }
 
 footer{
