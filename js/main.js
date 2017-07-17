@@ -13,15 +13,16 @@ var cards = [
 {
   rank: "king",
   suit: "hearts",
-  cardImage: "king-of-hearts.png"
+  cardImage: "images/king-of-hearts.png"
 },
 {
   rank: "king",
   suit: "diamonds",
-  cardImage: "king-of-diamonds.png"
+  cardImage: "images/king-of-diamonds.png"
 }
 ];
 var cardsInPlay = [];
+var gameStarted = false;
 
 var checkForMatch = function() {
   if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -32,6 +33,7 @@ var checkForMatch = function() {
 };
 
 var flipCard = function() {
+  gameStarted = true;
   var cardId = this.getAttribute("data-id");
     console.log("User flipped " + cards[cardId].rank);
     console.log(cards[cardId].cardImage);
@@ -52,6 +54,8 @@ var createBoard = function(){
     document.getElementById('game-board').appendChild(cardElement);
   };
 };
+
+
 
 createBoard();
 
