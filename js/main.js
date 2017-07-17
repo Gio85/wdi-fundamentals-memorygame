@@ -24,18 +24,12 @@ var cards = [
 var cardsInPlay = [];
 var gameStarted = false;
 var scores = 0;
+var clicked = 0;
 
-var checkForMatch = function() {
-  if (cardsInPlay[0] === cardsInPlay[1]) {
-    alert("You found a match!");
-    scores += 1;
-    document.getElementById("score").innerHTML = scores;
-  } else {
-    alert("Sorry, try again!!");
-  };
-};
+
 
 var flipCard = function() {
+  clicked += 1;
   gameStarted = true;
   var cardId = this.getAttribute("data-id");
     console.log("User flipped " + cards[cardId].rank);
@@ -47,6 +41,17 @@ var flipCard = function() {
       checkForMatch();
     };
   };
+
+var checkForMatch = function() {
+  if (cardsInPlay[0] === cardsInPlay[1]) {
+    alert("You found a match!");
+    scores += 1;
+    document.getElementById("yourScore").innerHTML = "Your score is:  ";
+    document.getElementById("score").innerHTML = scores;
+  } else {
+    alert("Sorry, try again!!");
+  };
+};
 
 var createBoard = function(){
   for (var i = 0; i < cards.length; i++) {
@@ -62,11 +67,12 @@ var createBoard = function(){
 var resetGame = function(){
   document.getElementById("game-board").innerHTML = "";
   cardsInPlay = [];
+  clicked = 0;
   createBoard();
 };
 
 document.getElementById("reset").onclick = function () {
-  if (gameStarted === true) {
+  if (gameStarted === true && clicked >= 2) {
     resetGame();
   } else {
     alert("Keep playing");
